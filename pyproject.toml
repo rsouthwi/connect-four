@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "connect-four"
+version = "0.1.0"
+description = ""
+authors = ["Ron Southwick <ronlsouthwick@gmail.com>"]
+readme = "README.md"
+packages = [{include = "connect_four"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
