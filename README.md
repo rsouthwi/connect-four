@@ -1,5 +1,8 @@
 # Connect Four
-![](c4.jpg)
+<p align="center" width="100%">
+<img src="c4.jpg">
+</p>
+
 Connect four of your checkers in a row while preventing your opponent from doing the same.  The game Connect Four is played by two players taking turns dropping a red or black piece into one of the columns.  When there are four of one color in a straight line (including diagonals), that player wins.
 
 ## Notebook
