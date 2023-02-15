@@ -9,6 +9,7 @@ Connect four of your checkers in a row while preventing your opponent from doing
 The web version uses [Flask](https://flask.palletsprojects.com/en/2.2.x/).  To run locally:
 
 * `poetry install`
+* `cp .env-example .env`  (create a .env file)
 * `flask run`  (runs a development server on port 8001)
 
 ## Notebook
