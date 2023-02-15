@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connect Four</title>
+    <style>
+        body {
+          font-family: 'Courier New', monospace;
+        }
+        {% if not game_over %}
+        .col {
+            color: blue;
+            cursor: pointer;
+        }
+        {% endif %}
+    </style>
+    <script>
+        const boardState = {{ board_state | safe }};
+        const postForm = function(column) {
+            const form = document.querySelector("form");
+            const boardStateInput = form.querySelector("input[name='board_state']");
+            boardState.player_selected_column = column;
+            boardStateInput.value = JSON.stringify(boardState);
+            form.submit();
+        }
+        {% if not game_over %}
+        addEventListener('DOMContentLoaded', (event) => {
+            const colIds = ["col_0","col_1","col_2","col_3","col_4","col_5","col_6"];
+            colIds.forEach((elemId, idx) => {
+                document.getElementById(elemId).addEventListener("click", function() {
+                    postForm(idx);
+                }, false);
+            });
+        });
+        {% endif %}
+    </script>
+</head>
+<body>
+    <div>{{ board }}</div><br />
+    <div>&nbsp; {{ message }}</div>
+
+    <form method="POST">
+        <input type="hidden" name="board_state">
+    </form>
+</body>
+</html>
