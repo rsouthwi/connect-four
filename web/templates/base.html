@@ -7,6 +7,12 @@
         body {
           font-family: 'Courier New', monospace;
         }
+        .center {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
         {% if not game_over %}
         .col {
             color: blue;
@@ -36,11 +42,13 @@
     </script>
 </head>
 <body>
-    <div>{{ board }}</div><br />
-    <div>&nbsp; {{ message }}</div>
+    <div class="center">
+        <div>{{ board }}</div><br />
+        <div>&nbsp; {{ message }}</div>
 
-    <form method="POST">
-        <input type="hidden" name="board_state">
-    </form>
+        <form method="POST">
+            <input type="hidden" name="board_state">
+        </form>
+    </div>
 </body>
 </html>
