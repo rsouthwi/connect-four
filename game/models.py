@@ -41,6 +41,13 @@ class ConnectFourBoard:
         else:
             self._set_up_board()
 
+    @property
+    def board_full(self) -> bool:
+        for column in self.columns:
+            if None in self.board[column]:
+                return False
+        return True
+
     def _set_up_board(self) -> None:
         for column in self.columns:
             self.board[column] = [None for i in range(self.board_height)]
