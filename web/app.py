@@ -61,7 +61,7 @@ def continue_game():
         return render_template("base.html", **data)
     if not in_progress_game.game_over:
         if in_progress_game.board_full:
-            message = "The board is full. Tie game."
+            message = Markup("The board is full. Tie game. <br /><a href>Play again</a>?")
             data = {
                 "board": render_game_board(previous_state),
                 "message": Markup(message),
