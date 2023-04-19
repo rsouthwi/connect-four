@@ -37,7 +37,7 @@ def start_game():
         "board": markup,
         "board_state": json.dumps(board_state),
         "game_over": False,
-        "message": f"It's Player{fresh_board.current_player}'s turn..."
+        "message": Markup(f"&nbsp;&nbsp;It's Player{fresh_board.current_player}'s turn...")
     }
     return render_template("base.html", **data)
 
@@ -57,11 +57,19 @@ def continue_game():
         }
         return render_template("base.html", **data)
     if not in_progress_game.game_over:
+        if in_progress_game.board_full:
+            message = "The board is full. Tie game."
+            data = {
+                "board": render_game_board(previous_state),
+                "message": Markup(message),
+                "board_state": json.dumps(previous_state)
+            }
+            return render_template("base.html", **data)
         in_progress_game.switch_player_turns()
-        message = f"It's Player{in_progress_game.current_player}'s turn..."
+        message = Markup(f"&nbsp;&nbsp;It's Player{in_progress_game.current_player}'s turn...")
         game_over = False
     else:
-        message = f"The winner is Player{in_progress_game.current_player}!"
+        message = Markup(f"&nbsp;&nbsp;The winner is Player{in_progress_game.current_player}!")
         game_over = True
     current_state = BoardState(board=in_progress_game.board, player_turn=in_progress_game.current_player)
     markup = render_game_board(current_state)

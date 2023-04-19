@@ -15,6 +15,12 @@ python-dotenv = "^0.21.1"
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
 
+
+[tool.poetry.group.prod.dependencies]
+gunicorn = "^20.1.0"
+greenlet = "^2.0.2" # required by gevent
+gevent = "^22.10.2"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
