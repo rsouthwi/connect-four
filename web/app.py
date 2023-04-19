@@ -6,6 +6,7 @@ from game.exceptions import ColumnFullException
 from game.models import ConnectFourBoard, BoardState
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
 def render_game_board(board_state: BoardState) -> str:
@@ -28,6 +29,7 @@ def render_game_board(board_state: BoardState) -> str:
     return Markup(output)
 
 
+@app.get("/c4")
 @app.get("/")
 def start_game():
     fresh_board = ConnectFourBoard()
@@ -42,6 +44,7 @@ def start_game():
     return render_template("base.html", **data)
 
 
+@app.post("/c4")
 @app.post("/")
 def continue_game():
     board_string = request.form['board_state']
