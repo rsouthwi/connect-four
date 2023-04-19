@@ -13,6 +13,9 @@
           left: 50%;
           transform: translate(-50%, -50%);
         }
+        .center-align {
+            text-align: center;
+        }
         {% if not game_over %}
         .col {
             color: blue;
@@ -46,7 +49,7 @@
     <div class="center">
         <h3>Welcome To Connect Four</h3>
         <div>{{ board }}</div><br />
-        <div>{{ message }}</div>
+        <div class="center-align">{{ message }}</div>
 
         <form method="POST">
             <input type="hidden" name="board_state">

@@ -72,7 +72,8 @@ def continue_game():
         message = Markup(f"&nbsp;&nbsp;It's Player{in_progress_game.current_player}'s turn...")
         game_over = False
     else:
-        message = Markup(f"&nbsp;&nbsp;The winner is Player{in_progress_game.current_player}!")
+        message = Markup(f"&nbsp;&nbsp;The winner is Player{in_progress_game.current_player}!"
+                         f"<br /><a href>Play again</a>?")
         game_over = True
     current_state = BoardState(board=in_progress_game.board, player_turn=in_progress_game.current_player)
     markup = render_game_board(current_state)
