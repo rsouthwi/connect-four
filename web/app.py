@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request
 import json
 from markupsafe import Markup
 
@@ -84,3 +84,8 @@ def continue_game():
         "message": message
     }
     return render_template("base.html", **data)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return redirect("https://www.ronsouthwick.com/404.html", code=302)
