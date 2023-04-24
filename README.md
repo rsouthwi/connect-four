@@ -3,7 +3,10 @@
 <img src="c4.jpg">
 </p>
 
-Connect four of your checkers in a row while preventing your opponent from doing the same.  The game Connect Four is played by two players taking turns dropping a red or black piece into one of the columns.  When there are four of one color in a straight line (including diagonals), that player wins.
+Connect four of your checkers in a row while preventing your opponent from doing the same.  
+The game Connect Four is played by two players taking turns dropping a red or black piece into one of the columns.  
+When there are four of one color in a straight line (including diagonals), that player wins.
+Try it out on [my website](https://www.ronsouthwick.com/c4).
 
 ## Web
 The web version uses [Flask](https://flask.palletsprojects.com/en/2.2.x/).  To run locally:
