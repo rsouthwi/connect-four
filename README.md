@@ -4,7 +4,8 @@
 </p>
 
 Connect four of your checkers in a row while preventing your opponent from doing the same.
-The game Connect Four is played by two players taking turns dropping a red or black piece into one of the columns.  When there are four of one color in a straight line (including diagonals), that player wins.
+The game Connect Four is played by two players taking turns dropping a red or black piece into one of the columns.
+When there are four of one color in a straight line (including diagonals), that player wins.
 Try it out on [my website](https://www.ronsouthwick.com/c4).
 
 ## Web
@@ -18,7 +19,7 @@ The web version uses [Flask](https://flask.palletsprojects.com/en/2.2.x/).  To r
 * `poetry run pytest`
 
 ## Notebook
-There is a version in the `notebook` directory built to be played in a [Jupyter Notebook](https://github.com/jupyter/notebook).  To Play:
+There is a version in the `notebook` directory built to be played in a [Jupyter Notebook](https://github.com/jupyter/notebook).
 #### Install
 * `poetry install`
 * `poetry run jupyter notebook`
