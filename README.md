@@ -12,6 +12,9 @@ The web version uses [Flask](https://flask.palletsprojects.com/en/2.2.x/).  To r
 * `cp .env-example .env`  (create a .env file)
 * `flask run`  (runs a development server on port 8001)
 
+### Running Unit Tests
+* `poetry run pytest`
+
 ## Notebook
 There is a version in the `notebook` directory built to be played in a [Jupyter Notebook](https://github.com/jupyter/notebook).  To Play:
 #### Install
