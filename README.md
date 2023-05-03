@@ -1,5 +1,5 @@
 # Connect Four
-<p align="center" width="100%">
+<p width="100%">
 <img src="c4.jpg">
 </p>
 
