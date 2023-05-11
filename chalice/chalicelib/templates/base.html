@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connect Four</title>
+    <style>
+        body {
+          font-family: 'Courier New', monospace;
+        }
+        header {
+          margin: 25px;
+        }
+        .center {
+            display: grid;
+            place-items: center;
+        }
+        .center-align {
+            text-align: center;
+        }
+        {% if not game_over %}
+        .col {
+            color: blue;
+            cursor: pointer;
+        }
+        {% endif %}
+        .title {
+            width: 180px;
+            height: 26px
+        }
+    </style>
+    <script>
+        const boardState = {{ board_state | safe }};
+        const postForm = function(column) {
+            const form = document.querySelector("form");
+            const boardStateInput = form.querySelector("input[name='board_state']");
+            boardState.player_selected_column = column;
+            boardStateInput.value = JSON.stringify(boardState);
+            form.submit();
+        }
+        {% if not game_over %}
+        addEventListener('DOMContentLoaded', (event) => {
+            const colIds = ["col_0","col_1","col_2","col_3","col_4","col_5","col_6"];
+            colIds.forEach((elemId, idx) => {
+                document.getElementById(elemId).addEventListener("click", function() {
+                    postForm(idx);
+                }, false);
+            });
+        });
+        {% endif %}
+    </script>
+</head>
+<body>
+    <header class="center-align">
+        <a href="//www.ronsouthwick.com">
+            <img src="//ronsouthwick.com/images/ron_southwick.svg" alt="ron southwick" class="title">
+        </a>
+    </header>
+    <div class="center">
+        <h3>Welcome To Connect 4</h3>
+        <div>{{ board }}</div><br />
+        <div class="center-align">{{ message }}</div>
+
+        <form method="POST">
+            <input type="hidden" name="board_state">
+        </form>
+    </div>
+</body>
+</html>
