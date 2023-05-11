@@ -8,9 +8,18 @@ The game Connect Four is played by two players taking turns dropping a red or bl
 When there are four of one color in a straight line (including diagonals), that player wins.
 Try it out on [my website](https://www.ronsouthwick.com/c4).
 
-## Web
-The web version uses [Flask](https://flask.palletsprojects.com/en/2.2.x/).  To run locally:
+## AWS Lambda
+I've created a version to run this app on an AWS Lambda.  It uses [Chalice](https://github.com/aws/chalice).
+#### Run locally:
+* `poetry install`
+* `poetry run chalice local`
 
+#### Deploy:
+* `poetry run chalice deploy`
+
+## Web
+The web version uses [Flask](https://flask.palletsprojects.com/en/2.2.x/).
+#### Run locally:
 * `poetry install`
 * `cp .env-example .env`  (create a .env file)
 * `flask run`  (runs a development server on port 8001)
