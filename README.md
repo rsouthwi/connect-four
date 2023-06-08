@@ -1,4 +1,5 @@
 # Connect Four
+[![Build Status](https://app.travis-ci.com/rsouthwi/connect-four.svg?branch=main)](https://app.travis-ci.com/rsouthwi/connect-four)
 <p align="center" width="100%">
 <img src="c4.jpg">
 </p>
