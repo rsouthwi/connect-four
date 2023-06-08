@@ -1,10 +1,9 @@
 [tool.poetry]
-name = "game"
+name = "connect-four"
 version = "0.1.0"
 description = ""
 authors = ["Ron Southwick <ronlsouthwick@gmail.com>"]
 readme = "README.md"
-packages = [{include = "connect_four"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
