@@ -7,7 +7,7 @@
 Connect four of your checkers in a row while preventing your opponent from doing the same.
 The game Connect Four is played by two players taking turns dropping a red or black piece into one of the columns.
 When there are four of one color in a straight line (including diagonals), that player wins.
-Try it out on [my website](https://www.ronsouthwick.com/c4).
+Try it out on [my website](https://ronsouthwick.com/connect4).
 
 ## AWS Lambda
 I've created a version to run this app on an AWS Lambda.  It uses [Chalice](https://github.com/aws/chalice).
