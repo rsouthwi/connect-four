@@ -18,6 +18,13 @@ I've created a version to run this app on an AWS Lambda.  It uses [Chalice](http
 #### Deploy:
 * `poetry run chalice deploy`
 
+#### Throwing it all away:
+* `poetry run chalice destroy`
+
+*_note_*:  If it's decided to use [Terraform](https://aws.github.io/chalice/topics/tf.html) instead of the 
+`chalice deploy` command, you'll want to run `chalice destroy` before migrating to Terraform.  Otherwise,
+an entirely new set of AWS resources would get created (API Gateway, Lambda, etc.)
+
 ## Web
 The web version uses [Flask](https://flask.palletsprojects.com/en/2.2.x/).
 #### Run locally:
