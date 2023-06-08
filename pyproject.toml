@@ -25,6 +25,11 @@ greenlet = "^2.0.2" # required by gevent
 gevent = "^22.10.2"
 
 
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.3.1"
+pytest-flask = "^1.2.0"
+
 [tool.pytest.ini_options]
 python_files = "test_*.py"
 testpaths = "tests"
