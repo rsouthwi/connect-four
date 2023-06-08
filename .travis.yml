@@ -4,6 +4,11 @@ os:
 dist: xenial
 
 language: python
+python:
+  - "3.9"
 
 script:
-  - python -m pytest -v
+  - pip install --upgrade pip
+  - pip install poetry
+  - poetry install --only test
+  - poetry run pytest -v
